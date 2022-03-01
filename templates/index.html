@@ -1,0 +1,203 @@
+    <head>
+        <meta charset="UTF-8    " />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ticker Find</title>
+        <!-- function test_func(merged_data) {
+          console.log(JSON.parse(merged_data))
+      }
+      test_func({{ merged_data|safe }}) -->
+        <link  rel="stylesheet" href="static/index.css"></link>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script id="testData" type="application/json">{
+          "c": [
+            179.62, 
+            176.31199999999998, 
+            176.592, 
+            172.876, 
+            177.132, 
+            189.98399999999998, 
+            188.134, 
+            205.01, 
+            194.568
+          ], 
+          "country": "US", 
+          "currency": "USD", 
+          "d": 9.1, 
+          "dp": 1.1364, 
+          "exchange": "NASDAQ NMS - GLOBAL MARKET", 
+          "finnhubIndustry": "Automobiles", 
+          "h": [
+            179.8, 
+            181.732, 
+            179.58800000000002, 
+            179.15, 
+            177.304, 
+            190, 
+            190.88798, 
+            205.496, 
+            203.79198
+          ], 
+          "ipo": "2010-06-09", 
+          "l": [
+            170.82, 
+            174.2, 
+            176.02, 
+            171.68800000000002, 
+            173.24, 
+            181.832, 
+            184.7862, 
+            196.5, 
+            194.4
+          ], 
+          "logo": "https://finnhub.io/api/logo?symbol=TSLA", 
+          "marketCapitalization": 837006.8, 
+          "name": "Tesla Inc", 
+          "o": [
+            171.6, 
+            178.94, 
+            177.624, 
+            177.976, 
+            175.568, 
+            183.8, 
+            188.002, 
+            198.376, 
+            198.04000000000002
+          ], 
+          "pc": 800.77, 
+          "phone": "16506815000.0", 
+          "s": "ok", 
+          "shareOutstanding": 1033.51, 
+          "t": [
+            1590969600, 
+            1591056000, 
+            1591142400, 
+            1591228800, 
+            1591315200, 
+            1591574400, 
+            1591660800, 
+            1591747200, 
+            1591833600
+          ], 
+          "ticker": "TSLA", 
+          "v": [
+            75426485, 
+            67827980, 
+            39747345, 
+            44438565, 
+            39059585, 
+            70873635, 
+            56940770, 
+            92817065, 
+            79582410
+          ], 
+          "weburl": "https://www.tesla.com/"
+        }
+      </script>        
+    </head>
+
+    <body>
+        <form action="{{ url_for("gfg")}}" method="post">
+            <div class="input-container">
+                <span class="search-icon material-icons">search</span>
+                <input
+                    class="search-input"
+                    name="ticker"
+                    type="text"
+                    placeholder="Enter Stock Ticker Symbol"
+                    autofocus
+                    required
+                />
+                <button type='reset' class="reset-btn "  >
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+        </form>
+
+        <ul class="tabs">    
+            <li data-tab-target="#company" class="active tab">Company</li>    
+            <li data-tab-target="#summary" class="tab">Stock Summary</li>    
+            <li data-tab-target="#charts" class="tab">Charts</li>   
+            <li data-tab-target="#news" class="tab">Latest News</li>   
+          </ul> 
+          
+          <div class="tab-content">    
+            <div id="company" data-tab-content class="active">    
+              
+              <div class="tab1-container">
+               
+                <table class="info-table">
+                  <tbody>
+                  <tr> <img src="https://finnhub.io/api/logo?symbol=TSLA" width="150em" ></tr>
+                  <tr><th>Company Name</th><td id="name">Tesla Inc</td></tr>
+                  <tr><th>Stock Ticker Symbol</th><td id="ticker">Tesla Inc</td></tr>
+                  <tr><th>Stick Exchange Code</th><td id="exchange">Tesla Inc</td></tr>
+                  <tr><th>Company IPO Date</th><td id="ipo">Tesla Inc</td></tr>
+                  <tr><th>Category</th><td id="finnhubIndustry">Tesla Inc</td></tr>
+                </tbody>
+                </table>
+              
+              </div> 
+                
+            </div>
+         
+            <div id="summary" data-tab-content>  
+              
+              <div class="tab1-container">
+              <table class="info-table">
+                <tbody>
+                
+               
+                <tr><th>Stock Ticker Symbol</th><td id="ticker">Tesla Inc</td></tr>
+                <tr><th>Trading Day</th><td id="trading-day">Tesla Inc</td></tr>
+                <tr><th>Previous Closing Price</th><td id="pc">Tesla Inc</td></tr>
+                <tr><th>Opening Price</th><td id="o">Tesla Inc</td></tr>
+                <tr><th>High Price</th><td id="h">Tesla Inc</td></tr>
+                <tr><th>Low Price</th><td id="l">Tesla Inc </td></tr>
+                <tr><th>Change</th><td id="d">Tesla Inc <span class="material-icons green">
+                  keyboard_arrow_up
+                  </span></td></tr>
+                <tr><th>Change Percentage</th><td id="dp">Tesla Inc <span class="material-icons red">
+                  keyboard_arrow_down
+                  </span></td></tr>
+              </tbody>
+              </table>
+              <div class="recommend-section">
+                <div id="left-text"><b>Strong<br> Sell</b></div>
+                <div class="box" id="strong-sell">4</div>
+                <div class="box" id="sell">4</div>
+                <div class="box" id="hold">4</div>
+                <div class="box" id="buy">4</div>
+                <div class="box" id="strong-buy">4</div>
+                <div id="right-text"><b>Strong<br> Buy</b></div>
+                
+              </div>
+              </div>
+            </div>
+          
+            <div id="charts" data-tab-content>    
+              
+              <div id="chart-container"></div>
+            </div> 
+            <div id="news" data-tab-content>    
+             
+              <div class="news-container">
+              <div class="news-card">
+              <img src="https://finnhub.io/api/logo?symbol=TSLA" alt="">
+              <ul><li class="news-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero architecto et?</li>
+              <li class="time">some time ago</li>
+              <li> <a class="original-post"href="#">See original post</a> </li>
+              </ul>
+              </div>
+            </div>
+      
+            </div> 
+          </div>
+          <script src="https://code.highcharts.com/stock/highstock.js"></script>
+          <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+          <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+          <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+          <script src="static/index.js
+          "></script>
+      
+    </body>
