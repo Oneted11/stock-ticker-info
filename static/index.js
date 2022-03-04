@@ -15,6 +15,30 @@ tabs.forEach((tab) => {
     target.classList.add("active");
   });
 });
+//handle form submit
+const form = document.querySelector("#search-form");
+form.addEventListener("submit", function (event) {
+  //add code
+  event.preventDefault();
+  searchTerm = form.elements[0].value;
+
+  fetch("127.0.0.1:5000/", {
+    method: "GET", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: searchTerm,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
+
+//end form submit
 //chart
 // test data1---functioning
 const c = [149.9, 144.908, 140.696, 121.6, 129.066];

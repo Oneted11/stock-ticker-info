@@ -16,7 +16,7 @@ finnhub_client = finnhub.Client(api_key="c8d1pqqad3i9nv0d4mn0")
 
 @app.route('/', methods=["GET", "POST"])
 def gfg():
-    if request.method == "POST":
+    if request.method == "GET":
         ticker_value = request.form.get("ticker")
         profile = finnhub_client.company_profile2(symbol=ticker_value)
         quotes = finnhub_client.quote(ticker_value)
