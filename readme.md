@@ -3,13 +3,13 @@
 ## Development
 
 ```bash
-export FLASK_ENV=development && flask run
+export FLASK_ENV=development FLASK_APP=run.py && flask run
 ```
 
 ## Production
 
 ```bash
-flask run
+export FLASK_APP=run.py && flask run
 ```
 
 # Lessons in Flask
