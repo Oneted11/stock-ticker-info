@@ -12,7 +12,7 @@ app.config['SECRET_KEY'] = 'SECRETKEYSECRETKEY'
 
 moment = Moment(app)
 
-finnhub_client = finnhub.Client(api_key="c8d1pqqad3i9nv0d4mn0")
+finnhub_client = finnhub.Client(api_key="c8kdqgqad3ibbdm3p040")
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -47,4 +47,4 @@ def gfg():
 bootstrap = Bootstrap(app)
 
 if __name__ == '__main__':
-    app.run(threaded=True, debug=True)
+    app.run(debug=True)
