@@ -3,10 +3,6 @@ import logging
 
 app = Flask(__name__)
 
-
-app = Flask(__name__)
-
-
 @app.route('/')
 def hello():
     app.logger.info('healthy')
@@ -18,8 +14,6 @@ def printMsg():
     app.logger.error("thsi is an error log from the user")
     app.logger.info("this isjust testing the info logging")
     return "Check the bloody console, where its running"
-
-
 
 if __name__ == '__main__':
     app.run()
