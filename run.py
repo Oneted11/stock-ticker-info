@@ -6,13 +6,13 @@ import json
 import datetime
 
 app = Flask(__name__)
-finnhub_client = finnhub.Client(api_key="c8d1pqqad3i9nv0d4mn0")
+finnhub_client = finnhub.Client(api_key="c8kdqgqad3ibbdm3p040")
 
 
 @app.route('/')
 def hello():
     app.logger.info('healthy')
-    return "<h1>HEllO WORLD</h1>"
+    return render_template("index.html")
 
 
 @app.route("/ticker/<ticker>")
@@ -35,6 +35,7 @@ def ticker_info(ticker):
     merged_data = profile.copy()
     merged_data.update(quotes)
     merged_data.update(candles)
+    # merged_data.update(recommend)
     return merged_data
 
 

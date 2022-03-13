@@ -22,14 +22,8 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
   searchTerm = form.elements[0].value;
 
-  fetch("127.0.0.1:5000/", {
-    method: "GET", // or 'PUT'
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: searchTerm,
-  })
-    .then((response) => response.json())
+  fetch("http://localhost:5000/ticker/" + searchTerm)
+    // .then((response) => response.json())
     .then((data) => {
       console.log("Success:", data);
     })
@@ -61,7 +55,7 @@ const getData = function () {
 getData();
 // testData2 from api
 const testData = JSON.parse(document.getElementById("testData").text);
-console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>", testData);
+// console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>", testData);
 //get elements
 const tickerEl = document.getElementById("ticker");
 const nameEl = document.getElementById("name");

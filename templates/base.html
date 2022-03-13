@@ -1,53 +1,42 @@
-{% extends "bootstrap/base.html" %}
-{% block title %}Ticker Find{% endblock %}
+{% extends "bootstrap/base.html" %} {% block title %}Ticker Find{% endblock %}
 {% block navbar %}
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ticker Find</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-      <script src="https://code.highcharts.com/stock/highstock.js"></script>
-      <script src="https://code.highcharts.com/stock/modules/data.js"></script>
-      <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-      <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
-      <script type="text/javacript" src="{{ url_for('static', filename='index.js') }}"></script>
-      <script type="text/javascript"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ticker Find</title>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{{ url_for('static', filename='index.css') }}"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+  <script
+    type="text/javacript"
+    src="{{ url_for('static', filename='index.js') }}"
+  ></script>
+  <script type="text/javascript"></script>
 </head>
-<div class="navbar navbar-inverse" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Flasky</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-            </ul>
-        </div>
-    </div>
-</div>
-{% endblock %}
 
-{% block head %}
-{{ super() }}
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-{% endblock %}
-
-{% block scripts %}
-{{ super() }}
-{{ moment.include_moment() }}
-{% endblock %}
-
-{% block content %}
-<div class="container">
-    {% block page_content %}{% endblock %}
-</div>
+{% endblock %} {% block head %} {{ super() }}
+<link
+  rel="shortcut icon"
+  href="{{ url_for('static', filename='favicon.ico') }}"
+  type="image/x-icon"
+/>
+<link
+  rel="icon"
+  href="{{ url_for('static', filename='favicon.ico') }}"
+  type="image/x-icon"
+/>
+{% endblock %} {% block scripts %} {{ super() }} {{ moment.include_moment() }}
+{% endblock %} {% block content %}
+<div class="container">{% block page_content %}{% endblock %}</div>
 {% endblock %}
