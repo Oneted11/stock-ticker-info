@@ -36,3 +36,31 @@ if __name__ == '__main__':
     app.run()
 
 ```
+
+## Calling local endpoint
+
+Apparently it's possible, there a re better ways of structuring your server-client archiotecture and this is possibly not a wise move but if you're in a pinch it is possible
+
+> A more sophisticated understanding can be gotten from [stackoverflow](https://stackoverflow.com/questions/48135786/how-to-make-a-get-request-on-another-endpoint-in-node)
+
+```javascript
+//js file calling internal endpoint
+fetch("http://localhost:5000/ticker/" + searchTerm)
+  // .then((response) => response.json())
+  .then((data) => {
+    console.log("Success:", data);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+```
+
+```python
+#flask endpoint that js is being served from
+@app.route('/')
+def hello():
+    app.logger.info('healthy')
+    return render_template("index.html")
+
+
+```

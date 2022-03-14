@@ -17,7 +17,7 @@ def hello():
 
 @app.route("/ticker/<ticker>")
 def ticker_info(ticker):
-    ticker_value = ticker
+    ticker_value = ticker.upper()
     profile = finnhub_client.company_profile2(symbol=ticker_value)
     quotes = finnhub_client.quote(ticker_value)
     recommend = finnhub_client.recommendation_trends(ticker_value)
@@ -36,6 +36,7 @@ def ticker_info(ticker):
     merged_data.update(quotes)
     merged_data.update(candles)
     # merged_data.update(recommend)
+    app.logger.info(candles)
     return merged_data
 
 
