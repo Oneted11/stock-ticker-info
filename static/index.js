@@ -23,9 +23,12 @@ form.addEventListener("submit", function (event) {
   searchTerm = form.elements[0].value;
 
   fetch("http://localhost:5000/ticker/" + searchTerm)
-    // .then((response) => response.json())
+    .then((response) => response.json())
     .then((data) => {
-      console.log("Success:", data);
+      testData = data;
+      // console.log("Success:", data);
+      document.querySelector("#stock-detail-section").classList.remove("none");
+      console.table(testData);
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -54,7 +57,7 @@ const getData = function () {
 // console.log("getData=>>>>>>>>>>>>>>>>>", getData());
 getData();
 // testData2 from api
-const testData = JSON.parse(document.getElementById("testData").text);
+let testData;
 // console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>", testData);
 //get elements
 const tickerEl = document.getElementById("ticker");
@@ -75,26 +78,26 @@ const holdEl = document.getElementById("hold");
 const buyEl = document.getElementById("buy");
 const sBuyEl = document.getElementById("strong-buy");
 // const dpEl = document.getElementById("dp");
-
-// asign elements values
-tickerEl.innerHTML = testData.ticker;
-nameEl.innerHTML = `${testData.name}`;
-exchangeEl.innerHTML = testData.exchange;
-ipoEl.innerHTML = testData.ipo;
-finnhubIndustryEl.innerHTML = testData.finnhubIndustry;
-tradingDayEl.innerHTML = new Date(testData.t[0] * 1000);
-pcEl.innerHTML = testData.pc;
-oEl.innerHTML = testData.o[0];
-hEl.innerHTML = testData.h[0];
-lEl.innerHTML = testData.l[0];
-dEl.innerHTML = testData.d;
-dpEl.innerHTML = testData.dp;
-// sSellEl.value=
-// sellEl.value=
-// holdEl.value=
-// buyEl.value=
-// sBuyEl.value=
-
+if (testData != undefined) {
+  // asign elements values
+  tickerEl.innerHTML = testData.ticker;
+  nameEl.innerHTML = `${testData.name}`;
+  exchangeEl.innerHTML = testData.exchange;
+  ipoEl.innerHTML = testData.ipo;
+  finnhubIndustryEl.innerHTML = testData.finnhubIndustry;
+  tradingDayEl.innerHTML = new Date(testData.t[0] * 1000);
+  pcEl.innerHTML = testData.pc;
+  oEl.innerHTML = testData.o[0];
+  hEl.innerHTML = testData.h[0];
+  lEl.innerHTML = testData.l[0];
+  dEl.innerHTML = testData.d;
+  dpEl.innerHTML = testData.dp;
+  // sSellEl.value=
+  // sellEl.value=
+  // holdEl.value=
+  // buyEl.value=
+  // sBuyEl.value=
+}
 //end data wrangling
 
 //actual chart drawing--shoul clean up

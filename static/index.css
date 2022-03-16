@@ -1,181 +1,183 @@
 body {
-    margin: 0;
-    padding: 0;
-  }
-  textarea:focus,
-  input:focus {
-    outline: none;
-  }
-  form {
-    width: 60%;
-    margin: auto;
-  }
-  form > h1 {
-    text-align: center;
-  }
-  .input-container {
-    display: flex;
-    align-content: stretch;
-    justify-content: space-between;
-    margin: 5em;
-    padding: 0.7em;
-    border-radius: 0.5em;
-    box-shadow: 3px 3px 35px 0px rgba(0, 0, 0, 0.66);
-    -webkit-box-shadow: 3px 3px 35px 0px rgba(0, 0, 0, 0.66);
-    -moz-box-shadow: 3px 3px 35px 0px rgba(0, 0, 0, 0.66);
-  }
-  
-  .input-container > span {
-    padding: 0em;
-  }
-  .search-icon {
-    height: 1em;
-    flex: 1;
-    margin-left: 0.75em;
-    max-width: 1em;
-  }
-  .search-input {
-    border-style: none;
-    margin-left: 1em;
-    margin-right: 1em;
-    flex: 3;
-  }
-  .reset-btn {
-    margin-right: 2em;
-    border: none;
-    height: 100%;
-    flex: 1;
-    max-width: 1em;
-    background-color: transparent;
-    padding-right: 0;
-  }
-  /* tabs styling */
-  [data-tab-content] {
-    display: none;
-  }
-  
-  .active[data-tab-content] {
-    display: block;
-  }
-  
-  body {
-    padding: 0;
-    margin: 0;
-  }
-  
-  .tabs {
-    display: flex;
-    justify-content: start;
-    list-style-type: none;
-    margin: 1em;
-    padding: 0;
-    border-bottom: 1px solid black;
-  }
-  
-  .tab {
-    cursor: pointer;
-    padding: 10px;
-  }
-  
-  .tab.active {
-    background-color: #ccc;
-  }
-  
-  .tab:hover {
-    background-color: #aaa;
-  }
-  
-  .tab-content {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  /* tab 1 : Company*/
-  .tab1-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .tab1-container img {
-    padding-bottom: 1em;
-    padding-left: 2em;
-  }
-  .info-table {
-    border-collapse: collapse;
-  }
-  .info-table th,
-  td {
-    align-items: center;
-    border-bottom: 1px solid black;
-  }
-  .info-table th {
-    text-align: right;
-  }
-  .info-table td {
-    text-align: left;
-    border-left: 1px solid black;
-  }
-  /* recommend section */
-  .recommend-section {
-    display: flex;
-    padding-top: 3em;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 10em;
-  }
-  .recommend-section .box {
-    /* height: 5em;
+  margin: 0;
+  padding: 0;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+form {
+  width: 60%;
+  margin: auto;
+}
+form > h1 {
+  text-align: center;
+}
+.input-container {
+  display: flex;
+  align-content: stretch;
+  justify-content: space-between;
+  margin: 5em;
+  padding: 0.7em;
+  border-radius: 0.5em;
+  box-shadow: 3px 3px 35px 0px rgba(0, 0, 0, 0.66);
+  -webkit-box-shadow: 3px 3px 35px 0px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: 3px 3px 35px 0px rgba(0, 0, 0, 0.66);
+}
+
+.input-container > span {
+  padding: 0em;
+}
+.search-icon {
+  height: 1em;
+  flex: 1;
+  margin-left: 0.75em;
+  max-width: 1em;
+}
+.search-input {
+  border-style: none;
+  margin-left: 1em;
+  margin-right: 1em;
+  flex: 3;
+}
+.reset-btn {
+  margin-right: 2em;
+  border: none;
+  height: 100%;
+  flex: 1;
+  max-width: 1em;
+  background-color: transparent;
+  padding-right: 0;
+}
+/* tabs styling */
+[data-tab-content] {
+  display: none;
+}
+
+.active[data-tab-content] {
+  display: block;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.tabs {
+  display: flex;
+  justify-content: start;
+  list-style-type: none;
+  margin: 1em;
+  padding: 0;
+  border-bottom: 1px solid black;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.tab.active {
+  background-color: #ccc;
+}
+
+.tab:hover {
+  background-color: #aaa;
+}
+
+.tab-content {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/* tab 1 : Company*/
+.tab1-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tab1-container img {
+  padding-bottom: 1em;
+  padding-left: 2em;
+}
+.info-table {
+  border-collapse: collapse;
+}
+.info-table th,
+td {
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.info-table th {
+  text-align: right;
+}
+.info-table td {
+  text-align: left;
+  border-left: 1px solid black;
+}
+/* recommend section */
+.recommend-section {
+  display: flex;
+  padding-top: 3em;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3em;
+}
+.recommend-section .box {
+  /* height: 5em;
     width: 5em; */
-    padding: 1em;
-    color: whitesmoke;
-    font-weight: bolder;
-    font-size: large;
-  }
-  .recommend-section #strong-sell {
-    background-color: rgba(255, 0, 0, 1);
-  }
-  .recommend-section #sell {
-    background-color: rgb(160, 42, 42);
-  }
-  .recommend-section #hold {
-    background-color: rgb(71, 119, 57);
-  }
-  .recommend-section #buy {
-    background-color: rgb(47, 156, 19);
-  }
-  .recommend-section #strong-buy {
-    background-color: rgb(102, 255, 0);
-  }
-  .recommend-section #left-text {
-    color: red;
-    margin: 1em;
-  }
-  .recommend-section #right-text {
-    color: green;
-    margin: 1em;
-  }
-  /* news section */
-  .news-card {
-    display: flex;
-    flex-direction: row;
-    background-color: #ccc;
-    padding: 0.5em;
-  }
-  .news-card ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-  }
-  .news-card .news-title,
-  .time {
-    margin-bottom: 0.75em;
-  }
-  /* util css */
-  .green {
-    color: rgb(0, 128, 0);
-    /* background-color: green; */
-  }
-  .red {
-    color: red;
-  }
-  
+  padding: 1em;
+  color: whitesmoke;
+  font-weight: bolder;
+  font-size: large;
+}
+.recommend-section #strong-sell {
+  background-color: rgba(255, 0, 0, 1);
+}
+.recommend-section #sell {
+  background-color: rgb(160, 42, 42);
+}
+.recommend-section #hold {
+  background-color: rgb(71, 119, 57);
+}
+.recommend-section #buy {
+  background-color: rgb(47, 156, 19);
+}
+.recommend-section #strong-buy {
+  background-color: rgb(102, 255, 0);
+}
+.recommend-section #left-text {
+  color: red;
+  margin: 1em;
+}
+.recommend-section #right-text {
+  color: green;
+  margin: 1em;
+}
+/* news section */
+.news-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #ccc;
+  padding: 0.5em;
+}
+.news-card ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+.news-card .news-title,
+.time {
+  margin-bottom: 0.75em;
+}
+/* util css */
+.green {
+  color: rgb(0, 128, 0);
+  /* background-color: green; */
+}
+.red {
+  color: red;
+}
+.none {
+  display: none;
+}

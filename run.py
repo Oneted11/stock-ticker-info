@@ -36,7 +36,7 @@ def ticker_info(ticker):
     merged_data.update(quotes)
     merged_data.update(candles)
     # merged_data.update(recommend)
-    app.logger.info(candles)
+    # app.logger.info(merged_data)
     return merged_data
 
 
