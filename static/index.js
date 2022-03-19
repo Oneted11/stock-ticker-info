@@ -25,10 +25,44 @@ form.addEventListener("submit", function (event) {
   fetch("http://localhost:5000/ticker/" + searchTerm)
     .then((response) => response.json())
     .then((data) => {
-      testData = data;
+      // stringify object back to json format
+      let JSONdata = JSON.stringify(data);
+      //insert json into html obejct to be state
+      document.getElementById("testData").innerHTML = JSONdata;
       // console.log("Success:", data);
+
       document.querySelector("#stock-detail-section").classList.remove("none");
-      console.table(testData);
+
+      // console.table(testData);
+      //create table
+      document.querySelector(".info-table").innerHTML = ` <tbody>
+          <tr>
+            <img
+              src="https://picsum.photos/200"
+              width="150em"
+            ></img>
+          </tr>
+          <tr>
+            <th>Company Name</th>
+            <td id="name">Tesla Inc</td>
+          </tr>
+          <tr>
+            <th>Stock Ticker Symbol</th>
+            <td id="ticker">Tesla Inc</td>
+          </tr>
+          <tr>
+            <th>Stick Exchange Code</th>
+            <td id="exchange">Tesla Inc</td>
+          </tr>
+          <tr>
+            <th>Company IPO Date</th>
+            <td id="ipo">Tesla Inc</td>
+          </tr>
+          <tr>
+            <th>Category</th>
+            <td id="finnhubIndustry">Tesla Inc</td>
+          </tr>
+        </tbody>`;
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -57,8 +91,8 @@ const getData = function () {
 // console.log("getData=>>>>>>>>>>>>>>>>>", getData());
 getData();
 // testData2 from api
-let testData;
-// console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>", testData);
+const testData = JSON.parse(document.getElementById("testData").text);
+console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>", testData);
 //get elements
 const tickerEl = document.getElementById("ticker");
 const nameEl = document.getElementById("name");
