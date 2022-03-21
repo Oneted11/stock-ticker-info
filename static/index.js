@@ -29,40 +29,53 @@ form.addEventListener("submit", function (event) {
       let JSONdata = JSON.stringify(data);
       //insert json into html obejct to be state
       document.getElementById("testData").innerHTML = JSONdata;
-      // console.log("Success:", data);
+      console.log("Success:", data);
 
       document.querySelector("#stock-detail-section").classList.remove("none");
 
       // console.table(testData);
-      //create table
-      document.querySelector(".info-table").innerHTML = ` <tbody>
-          <tr>
-            <img
-              src="https://picsum.photos/200"
-              width="150em"
-            ></img>
-          </tr>
-          <tr>
-            <th>Company Name</th>
-            <td id="name">Tesla Inc</td>
-          </tr>
-          <tr>
-            <th>Stock Ticker Symbol</th>
-            <td id="ticker">Tesla Inc</td>
-          </tr>
-          <tr>
-            <th>Stick Exchange Code</th>
-            <td id="exchange">Tesla Inc</td>
-          </tr>
-          <tr>
-            <th>Company IPO Date</th>
-            <td id="ipo">Tesla Inc</td>
-          </tr>
-          <tr>
-            <th>Category</th>
-            <td id="finnhubIndustry">Tesla Inc</td>
-          </tr>
-        </tbody>`;
+      //create company tab
+      document.querySelector(
+        "#company-container"
+      ).innerHTML = ` <table class="info-table">
+      <tbody>
+      <tr><img src=${data.logo} width="150em" ></tr>
+      <tr><th>Company Name</th><td id="name">${data.name}</td></tr>
+      <tr><th>Stock Ticker Symbol</th><td id="ticker">${data.ticker}</td></tr>
+      <tr><th>Stock Exchange Code</th><td id="exchange">${data.exchange}</td></tr>
+      <tr><th>Company IPO Date</th><td id="ipo">${data.ipo}</td></tr>
+      <tr><th>Category</th><td id="finnhubIndustry">${data.finnhubIndustry}</td></tr>
+    </tbody>
+    </table>`;
+
+      //create summary tab
+
+      document.querySelector(
+        "summary-container"
+      ).innerHTML = `<table class="info-table">
+        <tbody>
+        <tr><th>Stock Ticker Symbol</th><td id="ticker">${data.ticker}</td></tr>
+        <tr><th>Trading Day</th><td id="trading-day">${new Date(
+          data.t[0] * 1000
+        )}</td></tr>
+        <tr><th>Previous Closing Price</th><td id="pc">${data.pc}</td></tr>
+        <tr><th>Opening Price</th><td id="o">${data.o[0]}</td></tr>
+        <tr><th>High Price</th><td id="h">${data.h[0]}</td></tr>
+        <tr><th>Low Price</th><td id="l">${data.l[0]} </td></tr>
+        <tr><th>Change</th><td id="d">${data.d} ${
+        data.d.number() > 0 ? (
+          <span class="material-icons green">keyboard_arrow_up</span>
+        ) : (
+          <span class="material-icons red">keyboard_arrow_down</span>
+        )
+      }</td></tr>
+        <tr><th>Change Percentage</th><td id="dp">${
+          data.dp
+        } <span class="material-icons red">
+          keyboard_arrow_down
+          </span></td></tr>
+      </tbody>
+      </table>`;
     })
     .catch((error) => {
       console.error("Error:", error);
