@@ -51,7 +51,7 @@ form.addEventListener("submit", function (event) {
       //create summary tab
 
       document.querySelector(
-        "summary-container"
+        "#summary-container"
       ).innerHTML = `<table class="info-table">
         <tbody>
         <tr><th>Stock Ticker Symbol</th><td id="ticker">${data.ticker}</td></tr>
@@ -63,17 +63,15 @@ form.addEventListener("submit", function (event) {
         <tr><th>High Price</th><td id="h">${data.h[0]}</td></tr>
         <tr><th>Low Price</th><td id="l">${data.l[0]} </td></tr>
         <tr><th>Change</th><td id="d">${data.d} ${
-        data.d.number() > 0 ? (
-          <span class="material-icons green">keyboard_arrow_up</span>
-        ) : (
-          <span class="material-icons red">keyboard_arrow_down</span>
-        )
+        Number(data.d) > 0
+          ? '<span class="material-icons green">keyboard_arrow_up</span>'
+          : '<span class="material-icons red">keyboard_arrow_down</span>'
       }</td></tr>
-        <tr><th>Change Percentage</th><td id="dp">${
-          data.dp
-        } <span class="material-icons red">
-          keyboard_arrow_down
-          </span></td></tr>
+        <tr><th>Change Percentage</th><td id="dp">${data.dp} ${
+        Number(data.dp) > 0
+          ? '<span class="material-icons green">keyboard_arrow_up</span>'
+          : '<span class="material-icons red">keyboard_arrow_down</span>'
+      }</td></tr>
       </tbody>
       </table>`;
     })
