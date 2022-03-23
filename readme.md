@@ -65,7 +65,7 @@ def hello():
 
 ```
 
-### string literals
+## String literals
 
 Your can put functions in [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) not just display values
 
