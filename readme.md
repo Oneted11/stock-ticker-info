@@ -64,3 +64,31 @@ def hello():
 
 
 ```
+
+### string literals
+
+Your can put functions in [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) not just display values
+
+Template literals allow you to add conditional rendering using [ternary operator](https://www.programiz.com/javascript/ternary-operator) in es6 (New-ish js with fat arrows and stuff)
+
+> if you are returning a string from within the ternary operator use different quotes i.e double and single qoutes matching sort of like opening and closing tags
+
+Extracted **code example**
+
+```javascript
+<tr>
+  <th>Change</th>
+    <td id="d">${data.d} ${Number(data.d) > 0 ?
+    '<span class="material-icons green">keyboard_arrow_up</span>':
+    '<span> class="material-icons red">keyboard_arrow_down</span>'}
+    </td>
+</tr>
+<tr>
+  <th>Change Percentage</th>
+    <td id="dp">${data.dp} ${Number(data.dp) > 0 ?
+    '<span class="material-icons green">keyboard_arrow_up</span>':
+    '<span class="material-icons red">keyboard_arrow_down</span>'}
+    </td>
+</tr>
+
+```
