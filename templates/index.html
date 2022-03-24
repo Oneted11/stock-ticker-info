@@ -3,10 +3,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Ticker Find</title>
-        <!-- function test_func(merged_data) {
-          console.log(JSON.parse(merged_data))
-      }
-      test_func({{ merged_data|safe }}) -->
         <link  rel="stylesheet" href="static/index.css"></link>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script id="testData" type="application/json">
@@ -30,6 +26,9 @@
                 </button>
             </div>
         </form>
+
+        <!-- beginning of the details section -->
+
 <div id="stock-detail-section" class="none">
         <ul class="tabs">    
             <li data-tab-target="#company" class="active tab">Company</li>    
@@ -42,18 +41,9 @@
             <div id="company" data-tab-content class="active">    
               
               <div class="tab1-container" id="company-container">
+              <!-- section added in javascript -->
                
-                <!-- <table class="info-table">
-                  <tbody>
-                  <tr><img src="https://finnhub.io/api/logo?symbol=TSLA" width="150em" ></tr>
-                  <tr><th>Company Name</th><td id="name">Tesla Inc</td></tr>
-                  <tr><th>Stock Ticker Symbol</th><td id="ticker">Tesla Inc</td></tr>
-                  <tr><th>Stick Exchange Code</th><td id="exchange">Tesla Inc</td></tr>
-                  <tr><th>Company IPO Date</th><td id="ipo">Tesla Inc</td></tr>
-                  <tr><th>Category</th><td id="finnhubIndustry">Tesla Inc</td></tr>
-                </tbody>
-                </table> -->
-              
+                
               </div> 
                 
             </div>
@@ -61,34 +51,7 @@
             <div id="summary" data-tab-content>  
               
               <div class="tab1-container" id="summary-container">
-              <!-- <table class="info-table">
-                <tbody>
-                
-               
-                <tr><th>Stock Ticker Symbol</th><td id="ticker">Tesla Inc</td></tr>
-                <tr><th>Trading Day</th><td id="trading-day">Tesla Inc</td></tr>
-                <tr><th>Previous Closing Price</th><td id="pc">Tesla Inc</td></tr>
-                <tr><th>Opening Price</th><td id="o">Tesla Inc</td></tr>
-                <tr><th>High Price</th><td id="h">Tesla Inc</td></tr>
-                <tr><th>Low Price</th><td id="l">Tesla Inc </td></tr>
-                <tr><th>Change</th><td id="d">Tesla Inc <span class="material-icons green">
-                  keyboard_arrow_up
-                  </span></td></tr>
-                <tr><th>Change Percentage</th><td id="dp">Tesla Inc <span class="material-icons red">
-                  keyboard_arrow_down
-                  </span></td></tr>
-              </tbody>
-              </table> -->
-              <div class="recommend-section">
-                <div id="left-text"><b>Strong<br> Sell</b></div>
-                <div class="box" id="strong-sell">4</div>
-                <div class="box" id="sell">4</div>
-                <div class="box" id="hold">4</div>
-                <div class="box" id="buy">4</div>
-                <div class="box" id="strong-buy">4</div>
-                <div id="right-text"><b>Strong<br> Buy</b></div>
-                
-              </div>
+              <!-- section added in javascript -->
               </div>
             </div>
           
