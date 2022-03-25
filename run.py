@@ -21,7 +21,7 @@ def ticker_info(ticker):
     profile = finnhub_client.company_profile2(symbol=ticker_value)
     quotes = finnhub_client.quote(ticker_value)
     recommend = finnhub_client.recommendation_trends(ticker_value)
-    recommend = json.dumps(recommend)
+    # recommend = json.dumps(recommend)
     candles = finnhub_client.stock_candles(
         (ticker_value), 'D', 1590988249, 1591852249)
     today = datetime.datetime.now()
@@ -35,8 +35,9 @@ def ticker_info(ticker):
     merged_data = profile.copy()
     merged_data.update(quotes)
     merged_data.update(candles)
-    # merged_data.update(recommend)
+    merged_data.update({'recommendations': recommend})
     # app.logger.info(merged_data)
+
     return merged_data
 
 
