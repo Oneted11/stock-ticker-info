@@ -35,7 +35,7 @@ form
           .querySelector("#stock-detail-section")
           .classList.remove("none");
 
-        //create company tab
+        //render company tab
         document.querySelector(
           "#company-container"
         ).innerHTML = ` <table class="info-table">
@@ -48,8 +48,12 @@ form
       <tr><th>Category</th><td id="finnhubIndustry">${data.finnhubIndustry}</td></tr>
     </tbody>
     </table>`;
+        //descructure recommends
 
-        //create summary tab
+        console.log(data.recommendations[0]);
+        const { buy, hold, sell, strongBuy, strongSell } =
+          data.recommendations[0];
+        //render summary tab
 
         document.querySelector(
           "#summary-container"
@@ -77,11 +81,11 @@ form
       </table>
       <div class="recommend-section">
                 <div id="left-text"><b>Strong<br> Sell</b></div>
-                <div class="box" id="strong-sell">4</div>
-                <div class="box" id="sell">4</div>
-                <div class="box" id="hold">4</div>
-                <div class="box" id="buy">4</div>
-                <div class="box" id="strong-buy">4</div>
+                <div class="box" id="strong-sell">${strongSell}</div>
+                <div class="box" id="sell">${sell}</div>
+                <div class="box" id="hold">${hold}</div>
+                <div class="box" id="buy">${buy}</div>
+                <div class="box" id="strong-buy">${strongBuy}</div>
                 <div id="right-text"><b>Strong<br> Buy</b></div>
                 
               </div>`;
