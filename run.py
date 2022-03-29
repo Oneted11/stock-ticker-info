@@ -28,18 +28,18 @@ def ticker_info(ticker):
     # days = datetime.timedelta(days=1)
     # days_prior = today - days
     # days_prior.strftime("%Y-%m-%d")
-    year_ago = (datetime.datetime.now() -
-                datetime.timedelta(days=365)).strftime("%Y-%m-%d")
+    time_ago = (datetime.datetime.now() -
+                datetime.timedelta(days=30)).strftime("%Y-%m-%d")
     news = finnhub_client.company_news(
-        ticker_value, _from=year_ago, to=today)
+        ticker_value, _from=time_ago, to=today)
     # news = json.dumps(news)
     merged_data = profile.copy()
     merged_data.update(quotes)
     merged_data.update(candles)
     merged_data.update({'recommendations': recommend})
     merged_data.update({'news': news})
+    # logging
     app.logger.info(news)
-    # app.logger.info(days_prior)
 
     return merged_data
 

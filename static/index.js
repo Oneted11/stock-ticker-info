@@ -87,9 +87,21 @@ form
            <div class="box" id="strong-buy">${strongBuy}</div>
            <div id="right-text"><b>Strong<br> Buy</b></div>                
        </div>`;
-
+        console.log(data.news);
+        document.querySelector("#news-container").innerHTML = data.news.map(
+          (item) => {
+            return `
+          <div class="news-card">
+          <img src=${item.image} alt="">
+          <ul><li class="news-title">${item.headline}</li>
+          <li class="time">some time ago</li>
+          <li> <a class="original-post"href=${item.url} >See original post</a> </li>
+          </ul>
+          </div>
+          `;
+          }
+        );
         //create chart with data
-
         const c = data.c;
         const t = data.t;
         const v = data.v;
