@@ -88,14 +88,17 @@ form
            <div id="right-text"><b>Strong<br> Buy</b></div>                
        </div>`;
         console.log(data.news);
+        //render news tab
         document.querySelector("#news-container").innerHTML = data.news.map(
           (item) => {
             return `
           <div class="news-card">
-          <img src=${item.image} alt="">
+          <img src=${item.image} >
           <ul><li class="news-title">${item.headline}</li>
-          <li class="time">some time ago</li>
-          <li> <a class="original-post"href=${item.url} >See original post</a> </li>
+          <li class="time">${new Date(item.datetime * 1000)}</li>
+          <li> <a class="original-post"href=${
+            item.url
+          } >See original post</a> </li>
           </ul>
           </div>
           `;

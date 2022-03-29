@@ -167,6 +167,9 @@ td {
   display: flex;
   flex-direction: column;
 }
+.news-card img {
+  height: 7.5em;
+}
 .news-card .news-title,
 .time {
   margin-bottom: 0.75em;
