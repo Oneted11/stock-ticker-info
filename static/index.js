@@ -48,13 +48,12 @@ form
       <tr><th>Category</th><td id="finnhubIndustry">${data.finnhubIndustry}</td></tr>
     </tbody>
     </table>`;
-        //descructure recommends
 
-        console.log(data.recommendations[0]);
+        //descructure recommends
         const { buy, hold, sell, strongBuy, strongSell } =
           data.recommendations[0];
-        //render summary tab
 
+        //render summary tab
         document.querySelector(
           "#summary-container"
         ).innerHTML = `<table class="info-table">
@@ -80,15 +79,14 @@ form
       </tbody>
       </table>
       <div class="recommend-section">
-                <div id="left-text"><b>Strong<br> Sell</b></div>
-                <div class="box" id="strong-sell">${strongSell}</div>
-                <div class="box" id="sell">${sell}</div>
-                <div class="box" id="hold">${hold}</div>
-                <div class="box" id="buy">${buy}</div>
-                <div class="box" id="strong-buy">${strongBuy}</div>
-                <div id="right-text"><b>Strong<br> Buy</b></div>
-                
-              </div>`;
+           <div id="left-text"><b>Strong<br> Sell</b></div>
+           <div class="box" id="strong-sell">${strongSell}</div>
+           <div class="box" id="sell">${sell}</div>
+           <div class="box" id="hold">${hold}</div>
+           <div class="box" id="buy">${buy}</div>
+           <div class="box" id="strong-buy">${strongBuy}</div>
+           <div id="right-text"><b>Strong<br> Buy</b></div>                
+       </div>`;
 
         //create chart with data
 
@@ -113,7 +111,7 @@ form
         //call function to create chart data
         getData();
 
-        // Draw the chart
+        // render the chart
         Highcharts.stockChart("chart-container", {
           yAxis: [
             {
@@ -149,6 +147,6 @@ form
         });
       });
   })
-  .catch((error) => {
+  ?.catch((error) => {
     console.error("Error:", error);
   });
