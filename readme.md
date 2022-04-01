@@ -12,7 +12,7 @@ export FLASK_ENV=development FLASK_APP=run.py && flask run
 export FLASK_APP=run.py && flask run
 ```
 
-# Lessons in Flask
+# Today I Learned
 
 ## Logging to console
 
@@ -91,4 +91,45 @@ Extracted **code example**
     </td>
 </tr>
 
+```
+
+## Optional chaining in a try-catch
+
+So you are getting data in a try catch but keep getting undefined warnings or errors and want to get rid of them.something like [this](https://stackoverflow.com/questions/70323749/typeerror-cannot-read-properties-of-undefined-reading-catch) ,Apparently called a null reference. You can do [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining).Optional chaining allows you to check if the dat yopure expecting is there then continue along the chain, otherwise stop. It can be used as a check null if statement. but more elegant
+
+> very useful for fetching or any other promise based or [High Order Fucntions](https://eloquentjavascript.net/05_higher_order.html) heavy workflow
+
+```javascript
+fetch("http://localhost:5000/ticker/" + searchTerm)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  //optional chaining
+  ?.catch((error) => {
+    console.error("Error:", error);
+  });
+```
+
+## Arrray.join
+
+Say you're iterating through a couple of objects and outputting an array of html nodes or strings so that you can add them to the DOM mostly using most likely `.innerHTML` . Suddenly they render with commas in-between , bummer. The solution is [array.join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+
+```javascript
+document.querySelector("#news-container").innerHTML = data.news
+  .map((item) => {
+    return `
+          <div class="news-card">
+          <img src=${item.image} >
+          <ul><li class="news-title">${item.headline}</li>
+          <li class="time">${new Date(item.datetime * 1000)}</li>
+          <li> <a class="original-post"href=${
+            item.url
+          } >See original post</a> </li>
+          </ul>
+          </div>
+          `;
+  })
+  //remove commas in array of news components
+  .join("");
 ```

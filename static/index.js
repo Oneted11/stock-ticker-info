@@ -89,8 +89,8 @@ form
        </div>`;
         console.log(data.news);
         //render news tab
-        document.querySelector("#news-container").innerHTML = data.news.map(
-          (item) => {
+        document.querySelector("#news-container").innerHTML = data.news
+          .map((item) => {
             return `
           <div class="news-card">
           <img src=${item.image} >
@@ -102,8 +102,10 @@ form
           </ul>
           </div>
           `;
-          }
-        );
+          })
+          //remove commas in array of news components
+          .join("");
+
         //create chart with data
         const c = data.c;
         const t = data.t;
@@ -162,6 +164,7 @@ form
         });
       });
   })
+  //optional chaining
   ?.catch((error) => {
     console.error("Error:", error);
   });
