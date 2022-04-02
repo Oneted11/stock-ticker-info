@@ -27,13 +27,19 @@ form
       .then((data) => {
         // stringify object response back to json format
         let JSONdata = JSON.stringify(data);
-
         // console.log("Success:", data);
 
         //make visible the details section
         document
           .querySelector("#stock-detail-section")
           .classList.remove("none");
+
+        //error state
+        if (data.c <= 0) {
+          document.querySelector(
+            "#stock-detail-section"
+          ).innerHTML = `<p class="error-message"> Error: No Record has been found, Please enter a valid symbol</p>`;
+        }
 
         //render company tab
         document.querySelector(

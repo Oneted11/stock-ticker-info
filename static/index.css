@@ -49,6 +49,12 @@ form > h1 {
   background-color: transparent;
   padding-right: 0;
 }
+/* error mesage styling */
+.error-message {
+  display: flex;
+  justify-content: center;
+}
+
 /* tabs styling */
 [data-tab-content] {
   display: none;
