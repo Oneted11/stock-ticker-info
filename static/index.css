@@ -176,13 +176,31 @@ td {
 }
 .news-card img {
   height: 7.5em;
+  object-fit: contain;
 }
-.news-card .news-title,
-.time {
-  margin-bottom: 0.75em;
+.news-card li {
+  margin-bottom: 0.5em;
 }
 .news-title {
   font-weight: bolder;
+}
+.news-summary {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 1em; /* fallback */
+  max-height: 2em; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.news-bottom {
+  display: flex;
+}
+.time {
+  font-size: smaller;
+  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 /* util css */
 .green {

@@ -101,10 +101,13 @@ form
           <div class="news-card">
           <img src=${item.image} >
           <ul><li class="news-title">${item.headline}</li>
-          <li class="time">${new Date(item.datetime * 1000)}</li>
-          <li> <a class="original-post"href=${
+          <li class="news-summary" >${item.summary}</li>
+          
+          <li class="news-bottom"> <a class="original-post"href=${
             item.url
-          } >See original post</a> </li>
+          } >See original post</a> <p class="time">${new Date(
+              item.datetime * 1000
+            )}</p></li>
           </ul>
           </div>
           `;
