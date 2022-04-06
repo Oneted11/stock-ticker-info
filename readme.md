@@ -133,3 +133,11 @@ document.querySelector("#news-container").innerHTML = data.news
   //remove commas in array of news components
   .join("");
 ```
+
+## Get a package.json in python
+
+```bash
+pip3 freeze > requirements.txt
+```
+
+> The command creates a requirements.txt file with all the pip packages used in the project
