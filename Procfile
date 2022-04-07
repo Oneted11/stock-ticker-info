@@ -1,1 +1,1 @@
-web: FLASK_ENV=development FLASK_APP=run.py && flask run
+web: gunicorn --bind 0.0.0.0:$PORT run:app
