@@ -21,8 +21,13 @@ form
   .addEventListener("submit", function (event) {
     event.preventDefault();
     searchTerm = form.elements[0].value;
+    //get local host and port and http
+    const host = location.hostname;
+    const port = host == "localhost" ? "5000" : "80";
+    const http = host == "localhost" ? "http" : "https";
+    console.log({ http });
     //get data from api
-    fetch("http://localhost:5000/ticker/" + searchTerm)
+    fetch(`${http}://${host}:${port}/ticker/` + searchTerm)
       .then((response) => response.json())
       .then((data) => {
         // stringify object response back to json format
