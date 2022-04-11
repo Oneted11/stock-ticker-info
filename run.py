@@ -24,7 +24,7 @@ def ticker_info(ticker):
     # recommend = json.dumps(recommend)
     today = datetime.datetime.now().strftime("%Y-%m-%d")
     epoch_today = int(datetime.datetime.now().timestamp())
-    epoch_yr_ago = epoch_today-3155692600
+    epoch_yr_ago = epoch_today - 31556926
     time_ago = (datetime.datetime.now() -
                 datetime.timedelta(days=365)).strftime("%Y-%m-%d")
     candles = finnhub_client.stock_candles(
@@ -41,7 +41,7 @@ def ticker_info(ticker):
     merged_data.update({'recommendations': recommend})
     merged_data.update({'news': news})
     # logging
-    app.logger.info(datetime.datetime.now().timestamp())
+    app.logger.info(epoch_yr_ago)
 
     return merged_data
 
