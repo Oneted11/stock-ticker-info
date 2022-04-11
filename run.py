@@ -22,14 +22,16 @@ def ticker_info(ticker):
     quotes = finnhub_client.quote(ticker_value)
     recommend = finnhub_client.recommendation_trends(ticker_value)
     # recommend = json.dumps(recommend)
-    candles = finnhub_client.stock_candles(
-        (ticker_value), 'D', 1590988249, 1591852249)
     today = datetime.datetime.now().strftime("%Y-%m-%d")
+    epoch_today = int(datetime.datetime.now().timestamp())
+    epoch_yr_ago = epoch_today-3155692600
+    time_ago = (datetime.datetime.now() -
+                datetime.timedelta(days=365)).strftime("%Y-%m-%d")
+    candles = finnhub_client.stock_candles(
+        (ticker_value), 'D', epoch_yr_ago, epoch_today)
     # days = datetime.timedelta(days=1)
     # days_prior = today - days
     # days_prior.strftime("%Y-%m-%d")
-    time_ago = (datetime.datetime.now() -
-                datetime.timedelta(days=30)).strftime("%Y-%m-%d")
     news = finnhub_client.company_news(
         ticker_value, _from=time_ago, to=today)
     # news = json.dumps(news)
@@ -39,7 +41,7 @@ def ticker_info(ticker):
     merged_data.update({'recommendations': recommend})
     merged_data.update({'news': news})
     # logging
-    app.logger.info(news)
+    app.logger.info(datetime.datetime.now().timestamp())
 
     return merged_data
 
