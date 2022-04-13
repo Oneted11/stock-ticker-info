@@ -142,12 +142,14 @@ pip3 freeze > requirements.txt
 
 > The command creates a requirements.txt file with all the pip packages used in the project
 
-## Datetime
+## Python Datetime
 
-get today date `datetime.datetime.now() `
+To use you need to import it at the top of the python file as such `import datetime`
 
-get today date in epoch time `datetime.datetime.now().timestamp()`
+Get today date `datetime.datetime.now() `
 
-format date `datetime.datetime.now().strftime("%Y-%m-%d")`
+Get today date in epoch time `datetime.datetime.now().timestamp()`
 
-> capital letters are longer forms eg "Y" is 2010 "y" is 10 more information can be found [here](https://www.journaldev.com/23365/python-string-to-datetime-strptime)
+Format date `datetime.datetime.now().strftime("%Y-%m-%d")`
+
+> capital letters in `.strftime` are longer forms eg **"Y"** is 2010 **"y"** is 10 more information can be found [here](https://www.journaldev.com/23365/python-string-to-datetime-strptime)
