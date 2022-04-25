@@ -72,7 +72,7 @@ form
         <tr><th>Stock Ticker Symbol</th><td id="ticker">${data.ticker}</td></tr>
         <tr><th>Trading Day</th><td id="trading-day">${new Date(
           data.t[0] * 1000
-        )}</td></tr>
+        ).toDateString()}</td></tr>
         <tr><th>Previous Closing Price</th><td id="pc">${data.pc}</td></tr>
         <tr><th>Opening Price</th><td id="o">${data.o[0]}</td></tr>
         <tr><th>High Price</th><td id="h">${data.h[0]}</td></tr>
@@ -112,7 +112,7 @@ form
             item.url
           } >See original post</a> <p class="time">${new Date(
               item.datetime * 1000
-            )}</p></li>
+            ).toDateString()}</p></li>
           </ul>
           </div>
           `;

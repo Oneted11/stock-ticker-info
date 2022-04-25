@@ -153,3 +153,7 @@ Get today date in epoch time `datetime.datetime.now().timestamp()`
 Format date `datetime.datetime.now().strftime("%Y-%m-%d")`
 
 > capital letters in `.strftime` are longer forms eg **"Y"** is 2010 **"y"** is 10 more information can be found [here](https://www.journaldev.com/23365/python-string-to-datetime-strptime)
+
+## Javascript Dates
+
+> Dead simple inbuilt way of formatting dates in javascript is `.toDateString()` it gives you a simple date eg **Mon Apr 25 2022** and not the TMI that is the default i.e. **Mon Apr 25 2022 10:08:54 GMT+0300 (East Africa Time)** more info about dates can be found on W3 schools excelent [Date Reference](https://www.w3schools.com/jsref/jsref_obj_date.asp)
