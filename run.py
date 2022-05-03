@@ -41,7 +41,7 @@ def ticker_info(ticker):
     merged_data.update({'recommendations': recommend})
     merged_data.update({'news': news})
     # logging
-    app.logger.info(epoch_yr_ago)
+    # app.logger.info(epoch_yr_ago)
 
     return merged_data
 
@@ -57,6 +57,11 @@ def printMsg():
     app.logger.error("thsi is an error log from the user")
     app.logger.info("this isjust testing the info logging")
     return "Check the bloody console, where its running"
+
+
+@app.route('/?ticker=<thingie>')
+def wrongroute():
+    return redirect(url_for('hello'))
 
 
 if __name__ == '__main__':
