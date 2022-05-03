@@ -29,12 +29,10 @@ def ticker_info(ticker):
                 datetime.timedelta(days=365)).strftime("%Y-%m-%d")
     candles = finnhub_client.stock_candles(
         (ticker_value), 'D', epoch_yr_ago, epoch_today)
-    # days = datetime.timedelta(days=1)
-    # days_prior = today - days
-    # days_prior.strftime("%Y-%m-%d")
+
     news = finnhub_client.company_news(
         ticker_value, _from=time_ago, to=today)
-    # news = json.dumps(news)
+
     merged_data = profile.copy()
     merged_data.update(quotes)
     merged_data.update(candles)
