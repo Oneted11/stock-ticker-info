@@ -157,3 +157,19 @@ Format date `datetime.datetime.now().strftime("%Y-%m-%d")`
 ## Javascript Dates
 
 > Dead simple inbuilt way of formatting dates in javascript is `.toDateString()` it gives you a simple date eg **Mon Apr 25 2022** and not the TMI that is the default i.e. **Mon Apr 25 2022 10:08:54 GMT+0300 (East Africa Time)** more info about dates can be found on W3 schools excelent [Date Reference](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+
+## Add heroku cli
+
+> To add heroku to existing git
+
+Gain Access
+
+`heroku login`
+
+Add remote repository
+
+`heroku git:remote -a <name of application>`
+
+Deploy to heroku
+
+`git push heroku`
