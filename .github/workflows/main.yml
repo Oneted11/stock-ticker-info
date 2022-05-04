@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Push to Heroku
-        run: git push -f https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/stock-info-summary.git origin/master:master
+        run: git push heroku
 
       # - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       #   with:
