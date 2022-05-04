@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Authenticate heroku
-        run: heroku auth:${{secrets.HEROKU_API_KEY}}
+      # - name: Authenticate heroku
+      #   run: heroku auth:${{secrets.HEROKU_API_KEY}}
       - name: Push to Heroku
-        run: git push heroku
+        run: git push https://muriithited:${{secrets.HEROKU_TOKEN}}@git.heroku.com/stock-info-summary.git
 
       # - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       #   with:
