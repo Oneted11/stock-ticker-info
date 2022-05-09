@@ -8,11 +8,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+        env:
+          SECRET_KEY: ${{secrets.HEROKU_TOKEN}}
     steps:
       - uses: actions/checkout@v2
       - name: Create heroku login file credentials
-        env:
-          SECRET_KEY: ${{secrets.HEROKU_TOKEN}}
         run:
           echo "machine api.heroku.com\n login muriithited@gmail.com\n password $SECRET_KEY\nmachine git.heroku.com\n login muriithited@gmail\n password $SECRET_KEY" >~/.netrc
           head ~/.netrc
