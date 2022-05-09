@@ -15,8 +15,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Create heroku login file credentials
         run:
-          echo "machine api.heroku.com\n login muriithited@gmail.com\n password $SECRET_KEY\nmachine git.heroku.com\n login muriithited@gmail\n password $SECRET_KEY" >~/.netrc
-          head ~/.netrc
+          echo "machine api.heroku.com\n  login muriithited@gmail.com\n  password $SECRET_KEY\nmachine git.heroku.com\n  login muriithited@gmail\n  password $SECRET_KEY" >~/.netrc
+          cat ~/.netrc
       - name: Install git
         run: sudo apt install git
       - name: Install heroku
@@ -25,10 +25,3 @@ jobs:
         run: heroku git:remote -a stock-info-summary
       - name: Push to Heroku
         run: git push heroku
-
-      # - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-      #   with:
-      #     heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-      #     heroku_app_name: "stock-info-summary" #Must be unique in Heroku
-      #     heroku_email: "muriithited@gmail.com"
-      #     branch: "master"
