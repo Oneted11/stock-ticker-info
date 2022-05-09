@@ -13,8 +13,9 @@ jobs:
       - name: Create heroku login file credentials
         env:
           SECRET_KEY: ${{secrets.HEROKU_TOKEN}}
-        run: echo "machine api.heroku.com\n login muriithited@gmail.com\n password $SECRET_KEY\nmachine git.heroku.com\n login muriithited@gmail\n password $SECRET_KEY" >~/.netrc
-        run: head ~/.netrc
+        run:
+          echo "machine api.heroku.com\n login muriithited@gmail.com\n password $SECRET_KEY\nmachine git.heroku.com\n login muriithited@gmail\n password $SECRET_KEY" >~/.netrc
+          head ~/.netrc
       - name: Install git
         run: sudo apt install git
       - name: Install heroku
