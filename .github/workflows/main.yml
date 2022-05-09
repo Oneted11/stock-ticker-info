@@ -13,8 +13,8 @@ jobs:
         env:
           SECRET_KEY: ${{secrets.HEROKU_TOKEN}}
       - uses: actions/checkout@v2
-      # - name: Authenticate heroku
-      #   run: heroku auth:${{secrets.HEROKU_API_KEY}}
+      - name: Install git
+      - run: sudo apt install git
       - name: Install heroku
         run: sudo wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
       - name: Create login credentials
