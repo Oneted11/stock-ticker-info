@@ -8,8 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-        env:
-          SECRET_KEY: ${{secrets.HEROKU_TOKEN}}
+    env:
+      SECRET_KEY: ${{secrets.HEROKU_TOKEN}}
+
     steps:
       - uses: actions/checkout@v2
       - name: Create heroku login file credentials
