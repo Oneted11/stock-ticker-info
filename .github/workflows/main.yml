@@ -12,8 +12,14 @@ jobs:
       - uses: actions/checkout@v2
       # - name: Authenticate heroku
       #   run: heroku auth:${{secrets.HEROKU_API_KEY}}
+      - name: Install heroku
+        run: sudo wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+      - name: Create login credentials
+        run: echo "machine api.heroku.com\n login muriithited@gmail.com\n password ${{secrets.HEROKU_TOKEN}}\nmachine git.heroku.com\n login muriithited@gmail\n password ${{secrets.HEROKU_TOKEN}}" >~/.netrc
+      - name: Add heroku remote repo
+        run: heroku git:remote -a stock-info-summary
       - name: Push to Heroku
-        run: git push https://muriithited:${{secrets.HEROKU_TOKEN}}@git.heroku.com/stock-info-summary.git
+        run: git push heroku
 
       # - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       #   with:
