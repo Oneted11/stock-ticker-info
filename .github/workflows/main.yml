@@ -24,4 +24,4 @@ jobs:
       - name: Add heroku remote repo
         run: heroku git:remote -a stock-info-summary
       - name: Push to Heroku
-        run: git push heroku
+        run: git push heroku master
