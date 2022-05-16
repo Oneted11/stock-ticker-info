@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SECRET_KEY: ${{secrets.HEROKU_TOKEN}}
+      EMAIL: ${{secrets.HEROKU_EMAIL}}
 
     steps:
       - uses: actions/checkout@v2
@@ -19,9 +20,9 @@ jobs:
         run: sudo wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
       - name: Create heroku login file credentials
         run:
-          echo "machine api.heroku.com\n  login muriithited@gmail.com\n  password $SECRET_KEY\nmachine git.heroku.com\n  login muriithited@gmail\n  password $SECRET_KEY" >~/.netrc
+          echo "machine api.heroku.com\n  login $EMAIL\n  password $SECRET_KEY\nmachine git.heroku.com\n  login $EMAIL\n  password $SECRET_KEY" >~/.netrc
           cat ~/.netrc
       - name: Add heroku remote repo
-        run: heroku git:remote -a stock-info-summary
+        run: heroku git:remote -a <App Name on Heroku>
       - name: Push to Heroku
         run: git push heroku master
