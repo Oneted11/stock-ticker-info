@@ -23,6 +23,6 @@ jobs:
           echo "machine api.heroku.com\n  login $EMAIL\n  password $SECRET_KEY\nmachine git.heroku.com\n  login $EMAIL\n  password $SECRET_KEY" >~/.netrc
           cat ~/.netrc
       - name: Add heroku remote repo
-        run: heroku git:remote -a <App Name on Heroku>
+        run: heroku git:remote -a stock-info-summary
       - name: Push to Heroku
         run: git push heroku master
