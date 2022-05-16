@@ -173,3 +173,38 @@ Add remote repository
 Deploy to heroku
 
 `git push heroku`
+
+## Github Actions
+
+I tried using github actions to automate pushing to heroku when master branch is updated. In the process learned how to use github actions. Its a nifty thing for CI/CD. Best Tutorial I fround for my usecase was this [one](https://remarkablemark.org/blog/2021/03/12/github-actions-deploy-to-heroku/)
+
+```
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      SECRET_KEY: ${{secrets.HEROKU_TOKEN}}
+      EMAIL: ${{secrets.HEROKU_EMAIL}}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install git
+        run: sudo apt install git
+      - name: Install heroku
+        run: sudo wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+      - name: Create heroku login file credentials
+        run:
+          echo "machine api.heroku.com\n  login $EMAIL\n  password $SECRET_KEY\nmachine git.heroku.com\n  login $EMAIL\n  password $SECRET_KEY" >~/.netrc
+          cat ~/.netrc
+      - name: Add heroku remote repo
+        run: heroku git:remote -a <App Name on Heroku>
+      - name: Push to Heroku
+        run: git push heroku master
+```
