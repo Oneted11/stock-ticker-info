@@ -1,6 +1,9 @@
 # Live in Production
 
 [https://web-production-ba11.up.railway.app/](https://web-production-ba11.up.railway.app/)
+or
+
+[https://stock-info-summary.herokuapp.com/](https://stock-info-summary.herokuapp.com/)
 
 # How to run
 
