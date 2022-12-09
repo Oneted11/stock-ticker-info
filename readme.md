@@ -215,3 +215,20 @@ jobs:
       - name: Push to Heroku
         run: git push heroku master
 ```
+
+## How to setup docker
+
+after install on anything with a terminal
+> run the following:
+
+```bash
+sudo systemctl start docker.service
+sudo systemctl enable docker.service
+sudo usermod -aG docker $USER
+```
+
+First line is to start the docker daemon
+
+Second Line is to setup docker daemon to start at start-up so you don't need to touch systemctl again
+
+Third line allows the non-root user(you my guy) to do docker stuff without `sudo` infront of every command, That pesky "access denied" will weigh on your very soul
