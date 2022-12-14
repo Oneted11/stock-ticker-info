@@ -232,3 +232,5 @@ First line is to start the docker daemon
 Second Line is to setup docker daemon to start at start-up so you don't need to touch systemctl again
 
 Third line allows the non-root user(you my guy) to do docker stuff without `sudo` infront of every command, That pesky "access denied" will weigh on your very soul
+
+> Highly encourage you to read [this short article to get back to speed](https://linuxconfig.org/manjaro-linux-docker-installation)
