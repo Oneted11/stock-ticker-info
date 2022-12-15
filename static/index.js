@@ -104,7 +104,7 @@ form
           .map((item) => {
             return `
           <div class="news-card">
-          <img src=${item.image} >
+          <img src=${item.image} onerror="this.onerror=null;this.src=${data.logo};">
           <ul><li class="news-title">${item.headline}</li>
           <li class="news-summary" >${item.summary}</li>
           

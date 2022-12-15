@@ -12,6 +12,11 @@ or
 ```bash
 export FLASK_ENV=development FLASK_APP=run.py && flask run
 ```
+### In docker on local machine
+```bash
+$ docker build <path_to_folder_with_dockerfile> -t <name_you_want_for_container>
+$ docker run -p 5000:5000 <name_you_gave_container>:latest
+```
 
 ## Production
 
