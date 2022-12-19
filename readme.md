@@ -239,3 +239,6 @@ Second Line is to setup docker daemon to start at start-up so you don't need to 
 Third line allows the non-root user(you my guy) to do docker stuff without `sudo` infront of every command, That pesky "access denied" will weigh on your very soul
 
 > Highly encourage you to read [this short article to get back to speed](https://linuxconfig.org/manjaro-linux-docker-installation)
+
+ - [Docker setup debug ](https://www.howtogeek.com/devops/how-to-check-if-the-docker-daemon-or-a-container-is-running/)
+ - [Dockerizing a flask application](https://www.freecodecamp.org/news/how-to-dockerize-a-flask-app/)
