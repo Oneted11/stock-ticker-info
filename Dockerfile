@@ -7,7 +7,6 @@ FROM python:3.10-slim
 ENV PYTHONUNBUFFERED True
 
 # Copy local code to the container image.
-ENV $PORT = 8080
 ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . ./
